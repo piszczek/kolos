@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
-
-<!-- Mirrored from demos.jquerymobile.com/1.4.5/panel-external-internal/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Apr 2016 19:43:44 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=utf-8"/><!-- /Added by HTTrack -->
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <title>External and internal panels</title>
     <link rel="shortcut icon" href="http://demos.jquerymobile.com/1.4.5/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="demos.jquerymobile.com/1.4.5/css/themes/default/jquery.mobile-1.4.5.min.css">
     <script src="demos.jquerymobile.com/1.4.5/js/jquery.js"></script>
     <script src="demos.jquerymobile.com/1.4.5/js/jquery.mobile-1.4.5.min.js"></script>
+
     <script src="cordova.js"></script>
+
     <script>
         $(document).on("pagecreate", function () {
             $("body > [data-role='panel']").panel();
@@ -22,18 +21,15 @@
             $("body > [data-role='header']").toolbar();
             $("body > [data-role='header'] [data-role='navbar']").navbar();
         });
-        // Wait for device API libraries to load
-        //
-        document.addEventListener("deviceready", onDeviceReady, false);
 
-        //
+        //document.addEventListener("deviceready", onDeviceReady, false);
         function onDeviceReady() {
             var element = document.getElementById('deviceProperties');
-            element.innerHTML = 'Device Model: '    + device.model    + '<br />' +
-                    'Device Cordova: '  + device.cordova  + '<br />' +
+            element.innerHTML = 'Device Model: ' + device.model + '<br />' +
+                    'Device Cordova: ' + device.cordova + '<br />' +
                     'Device Platform: ' + device.platform + '<br />' +
-                    'Device UUID: '     + device.uuid     + '<br />' +
-                    'Device Version: '  + device.version  + '<br />';
+                    'Device UUID: ' + device.uuid + '<br />' +
+                    'Device Version: ' + device.version + '<br />';
         }
 
     </script>
@@ -42,24 +38,31 @@
 
 <div data-role="header" data-position="fixed" data-theme="a">
     <a href="#outside" data-icon="bars" data-iconpos="notext">Menu</a>
-    <h1>Niezbednik studenta</h1>
+    <h1>Andrzej Piszczek</h1>
 
 </div>
 
 <div data-role="page" id="a">
-
     <div role="main" class="ui-content">
 
         <h2>Witamy na stronie głównej aplikacji</h2>
-        <p id="deviceProperties">
 
+        <p id="deviceProperties">
         </p>
+        <a href="#popupParis" data-rel="popup" data-position-to="window" data-transition="fade"  class="ui-btn ui-corner-all ui-shadow">Popup</a>
+
+    </div>
+
+
+    <div data-role="popup" id="popupParis" data-overlay-theme="b" data-theme="b" data-corners="false">
+        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img class="popphoto" src="http://demos.jquerymobile.com/1.4.0/_assets/img/paris.jpg" style="max-height:512px;" alt="Paris, France">
     </div>
 </div>
 
 <div data-role="panel" id="outside" data-theme="b">
     <ul data-role="listview">
         <li data-icon="back"><a href="#" data-rel="close">Close</a></li>
+
         <li><a href="autor.html">Autor</a></li>
         <li><a href="uczelnia.html">Uczelnia</a></li>
         <li><a href="skaner.html">Skaner</a></li>
@@ -68,7 +71,9 @@
     </ul>
 </div>
 
+
+
+
 </body>
 
-<!-- Mirrored from demos.jquerymobile.com/1.4.5/panel-external-internal/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Apr 2016 19:43:47 GMT -->
 </html>
