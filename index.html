@@ -22,24 +22,23 @@
             $("body > [data-role='header'] [data-role='navbar']").navbar();
         });
 
-        //document.addEventListener("deviceready", onDeviceReady, false);
-        function onDeviceReady() {
-            var element = document.getElementById('deviceProperties');
-            element.innerHTML = 'Device Model: ' + device.model + '<br />' +
-                    'Device Cordova: ' + device.cordova + '<br />' +
-                    'Device Platform: ' + device.platform + '<br />' +
-                    'Device UUID: ' + device.uuid + '<br />' +
-                    'Device Version: ' + device.version + '<br />';
-        }
-
     </script>
+    <style>
+        .lime {
+            background-color: green!important;
+            color: white!important;
+        }
+        .ui-content{
+            background-color: lime!important;
+            color: black!important;
+        }
+    </style>
 </head>
 <body>
 
 <div data-role="header" data-position="fixed" data-theme="a">
-    <a href="#outside" data-icon="bars" data-iconpos="notext">Menu</a>
-    <h1>Andrzej Piszczek</h1>
-
+    <a href="#" data-icon="arrow-l" data-rel="back">&nbsp;</a>
+    <h1>STUDIA NA UEK</h1>
 </div>
 
 <div data-role="page" id="a">
@@ -49,26 +48,63 @@
 
         <p id="deviceProperties">
         </p>
-        <a href="#popupParis" data-rel="popup" data-position-to="window" data-transition="fade"  class="ui-btn ui-corner-all ui-shadow">Popup</a>
+
+        <a class="ui-btn ui-corner-all ui-shadow" href="#opis">Opis</a>
+        <a href="#popupParis" data-rel="popup" data-position-to="window" data-transition="fade"  class="ui-btn ui-corner-all ui-shadow">Zdjęcie</a>
+        <a class="ui-btn ui-corner-all ui-shadow" href="#autor">Autor</a>
+        <a class="ui-btn ui-corner-all ui-shadow" href="#kontakt">Kontakt</a>
 
     </div>
 
 
     <div data-role="popup" id="popupParis" data-overlay-theme="b" data-theme="b" data-corners="false">
-        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img class="popphoto" src="http://demos.jquerymobile.com/1.4.0/_assets/img/paris.jpg" style="max-height:512px;" alt="Paris, France">
+        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img class="popphoto" src="https://lh4.googleusercontent.com/-qD8wIVFcxdM/AAAAAAAAAAI/AAAAAAAAANo/r98n8lQzpx4/s0-c-k-no-ns/photo.jpg" style="max-height:512px;" alt="Paris, France">
+    </div>
+
+</div>
+
+<div data-role="page" id="autor">
+
+    <div role="main" class="ui-content">
+
+        <h2 >Autor</h2>
+
+        <p>Andrzej Piszczek</p>
+        <p>s175644</p>
+        <p>andpis58@gmail.com</p>
+        <p><a href="tel:798-812-235">798-812-235</a></p>
+
     </div>
 </div>
 
-<div data-role="panel" id="outside" data-theme="b">
-    <ul data-role="listview">
-        <li data-icon="back"><a href="#" data-rel="close">Close</a></li>
+<div data-role="page" id="opis">
 
-        <li><a href="autor.html">Autor</a></li>
-        <li><a href="uczelnia.html">Uczelnia</a></li>
-        <li><a href="skaner.html">Skaner</a></li>
-        <li><a href="biorytm.html">Biorytm</a></li>
-        <li><a href="index.html">Device info</a></li>
-    </ul>
+    <div role="main" class="ui-content">
+
+        <h2 class="lime" data-role="header">Opis</h2>
+
+        <p>To jest opis zadania na kolokwium</p>
+        <p>Kolokwium na zaliczeni zaawansowanych aplikacji internetowych</p>
+
+    </div>
+</div>
+
+<div data-role="page" id="kontakt">
+        <div data-role="main" class="ui-content">
+
+            <label for="email">Email: <span>*</span></label>
+            <input type="email" id="email" name="email" placeholder="Email"/>
+
+            <label for="temat">Temat : <span>*</span></label>
+            <input type="text" name="temat" id="temat" placeholder="Temat">
+
+            <label for="tresc">Treść : <span>*</span></label>
+
+            <textarea name="tresc" id="tresc" placeholder="Podaj tresc..." style="min-height: 100px"></textarea>
+
+            <a class="ui-btn ui-corner-all ui-shadow" href="#kontakt">Wyslij</a>
+
+        </div>
 </div>
 
 
